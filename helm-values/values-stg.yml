@@ -23,3 +23,5 @@ autoscaling:
   minReplicas: 1
   maxReplicas: 1
   targetCPUUtilizationPercentage: 75
+
+livenessProbe: []
