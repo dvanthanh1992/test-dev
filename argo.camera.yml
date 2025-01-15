@@ -8,10 +8,9 @@ spec:
         elements:
           - environment: prd
             namespace: thanh-prd
-            valuesFile: helm-values/values-prd.yml
   template:
     metadata:
-      name: 'camera-app-{{.environment}}'
+      name: camera-app-{{.environment}}
     spec:
       project: thanh-camera
       source:
@@ -20,7 +19,7 @@ spec:
         path: thanh-camera-infra
         helm:
           valueFiles:
-            - 'https://raw.githubusercontent.com/dvanthanh1992/test-dev/{{.environment}}/{{.valuesFile}}'
+            - helm-values/values-prd.yml
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.namespace}}'
