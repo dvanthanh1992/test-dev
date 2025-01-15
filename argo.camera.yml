@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: camera-app
+spec:
+  generators:
+    - list:
+        elements:
+          - environment: stg
+            branch: stg
+            namespace: thanh-stg
+            valuesFile: values-stg.yaml
+          - environment: prd
+            branch: prd
+            namespace: thanh-prd
+            valuesFile: values-prd.yaml
+  template:
+    metadata:
+      name: camera-app-{{environment}}
+    spec:
+      project: thanh-camera
+      source:
+        repoURL: https://github.com/dvanthanh1992/test-infra.git
+        targetRevision: "{{branch}}"
+        path: helm-values
+        helm:
+          valueFiles:
+            - "{{valuesFile}}"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{namespace}}"
+        createNamespace: true
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
