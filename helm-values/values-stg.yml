@@ -24,4 +24,11 @@ autoscaling:
   maxReplicas: 1
   targetCPUUtilizationPercentage: 75
 
-livenessProbe: []
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
