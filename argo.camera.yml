@@ -8,11 +8,9 @@ spec:
     - list:
         elements:
           - environment: stg
-            branch: main
             namespace: thanh-stg
             valuesFile: helm-values/values-stg.yml
           - environment: prd
-            branch: main
             namespace: thanh-prd
             valuesFile: helm-values/values-prd.yml
   template:
@@ -26,7 +24,7 @@ spec:
         path: thanh-camera-infra
         helm:
           valueFiles:
-            - https://raw.githubusercontent.com/dvanthanh1992/test-dev/{{branch}}/{{valuesFile}}
+            - https://raw.githubusercontent.com/dvanthanh1992/test-dev/{{environment}}/{{valuesFile}}
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{namespace}}"
