@@ -1,3 +1,4 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -7,13 +8,13 @@ spec:
     - list:
         elements:
           - environment: stg
-            branch: stg
+            branch: main
             namespace: thanh-stg
-            valuesFile: values-stg.yaml
+            valuesFile: helm-values/values-stg.yml
           - environment: prd
-            branch: prd
+            branch: main
             namespace: thanh-prd
-            valuesFile: values-prd.yaml
+            valuesFile: helm-values/values-prd.yml
   template:
     metadata:
       name: camera-app-{{environment}}
@@ -21,11 +22,11 @@ spec:
       project: thanh-camera
       source:
         repoURL: https://github.com/dvanthanh1992/test-infra.git
-        targetRevision: "{{branch}}"
-        path: helm-values
+        targetRevision: main
+        path: thanh-camera-infra
         helm:
           valueFiles:
-            - "{{valuesFile}}"
+            - https://raw.githubusercontent.com/dvanthanh1992/test-dev/{{branch}}/{{valuesFile}}
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{namespace}}"
