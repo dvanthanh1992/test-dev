@@ -7,12 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/dvanthanh1992/test-dev.git
-    targetRevision: prd
-    path: thanh-camera-infra
-    helm:
-      valueFiles:
-        - helm-values/values-prd.yml
+    repoURL: https://raw.githubusercontent.com/dvanthanh1992/test-dev/prd/helm-charts/
+    chart: thanh-camera-infra
+    targetRevision: 0.1.0
   destination:
     server: https://kubernetes.default.svc
     namespace: thanh-prd

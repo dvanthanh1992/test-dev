@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  thanh-camera-infra:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-01-15T17:17:38.653224922+07:00"
+    description: A Helm chart for deploying the camera app
+    digest: 64602a8142c23f534d29064daa9c1f3c2f423ee4c915e7274089b76907bdf44e
+    name: thanh-camera-infra
+    urls:
+    - https://raw.githubusercontent.com/dvanthanh1992/test-dev/main/helm-charts/thanh-camera-infra-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-01-15T17:17:38.652146016+07:00"
