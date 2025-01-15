@@ -2,20 +2,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: camera-app
+  name: camera-app-prd
 spec:
-  generators:
-    - list:
-        elements:
-          - environment: stg
-            namespace: thanh-stg
-            valuesFile: helm-values/values-stg.yml
-          - environment: prd
-            namespace: thanh-prd
-            valuesFile: helm-values/values-prd.yml
   template:
     metadata:
-      name: camera-app-{{environment}}
+      name: camera-app-prd
     spec:
       project: thanh-camera
       source:
@@ -24,10 +15,10 @@ spec:
         path: thanh-camera-infra
         helm:
           valueFiles:
-            - https://raw.githubusercontent.com/dvanthanh1992/test-dev/{{environment}}/{{valuesFile}}
+            - https://raw.githubusercontent.com/dvanthanh1992/test-dev/prd/helm-values/values-prd.yml
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{namespace}}"
+        namespace: thanh-prd
         createNamespace: true
       syncPolicy:
         automated:
