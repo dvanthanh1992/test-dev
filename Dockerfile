@@ -1,23 +1,28 @@
-FROM python:3.11.9
+FROM python:3.11.9-slim
 
+# Set ARG and ENV
 ARG TELEGRAM_TOKEN
+ENV TELEGRAM_TOKEN="${TELEGRAM_TOKEN}"
 
-ENV TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
-
-COPY --from=requirements requirements.apt .
+# Install system dependencies
+COPY ./requirements/requirements.apt .
 RUN apt-get update && \
-    sed 's/#.*//' requirements.apt | xargs apt-get install -y && \
-    apt-get clean all
+    apt-get install -y --no-install-recommends $(sed 's/#.*//' requirements.apt) && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-COPY --from=requirements requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt \
-    && rm -fr /root/.cache/pip/
+# Install Python dependencies
+COPY ./requirements/requirements.txt . 
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy application source
 COPY camera-src /camera-src
-
 WORKDIR /camera-src
 
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && dpkg -i google-chrome-stable_current_amd64.deb
+# Install Chrome (Optional)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends chromium && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD ["python", "main.py"]
