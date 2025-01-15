@@ -10,7 +10,7 @@ spec:
             namespace: thanh-prd
   template:
     metadata:
-      name: camera-app-{{.environment}}
+      name: camera-app-prd
     spec:
       project: thanh-camera
       source:
@@ -22,7 +22,7 @@ spec:
             - helm-values/values-prd.yml
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{.namespace}}'
+        namespace: thanh-prd
         createNamespace: true
       syncPolicy:
         automated:
