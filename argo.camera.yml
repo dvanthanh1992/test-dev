@@ -14,8 +14,8 @@ spec:
     spec:
       project: thanh-camera
       source:
-        repoURL: https://github.com/dvanthanh1992/test-infra.git
-        targetRevision: main
+        repoURL: https://github.com/dvanthanh1992/test-dev.git
+        targetRevision: prd
         path: thanh-camera-infra
         helm:
           valueFiles:
