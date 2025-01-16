@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: camera-app-prd
-  namespace: argocd
+  namespace: thanh-prd
 spec:
   project: default
   sources:
