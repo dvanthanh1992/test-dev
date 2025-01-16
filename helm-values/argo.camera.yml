@@ -7,7 +7,7 @@ spec:
   project: default
   sources:
     - chart: thanh-camera-app-chart
-      repoURL: oci://registry-1.docker.io/dvanthanh1992/thanh-camera-app-chart
+      repoURL: "registry-1.docker.io/dvanthanh1992"
       targetRevision: 0.1.0
       helm:
         valueFiles:
