@@ -13,9 +13,11 @@ spec:
       helm:
         valueFiles:
           - $values/helm-values/values-prd.yml
-    - repoURL: https://github.com/dvanthanh1992/test-dev
-      targetRevision: HEAD
+
+    - repoURL: "https://github.com/dvanthanh1992/test-dev"
+      targetRevision: prd
       ref: values
+      
   destination:
     server: https://kubernetes.default.svc
     namespace: thanh-prd
