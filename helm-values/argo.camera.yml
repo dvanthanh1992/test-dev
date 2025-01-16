@@ -7,8 +7,8 @@ metadata:
 spec:
   project: default
   sources:
-    - chart: hello-world
-      repoURL: https://helm.github.io/examples
+    - chart: thanh-camera-app-chart
+      repoURL: oci://registry-1.docker.io/dvanthanh1992
       targetRevision: 0.1.0
       helm:
         valueFiles:
