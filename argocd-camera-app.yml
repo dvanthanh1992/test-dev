@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: oci://registry-1.docker.io
+    - repoURL: registry-1.docker.io
       chart: dvanthanh1992/thanh-camera-app-chart
       targetRevision: 0.1.0
       helm:
