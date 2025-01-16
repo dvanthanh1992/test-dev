@@ -5,17 +5,18 @@ metadata:
   namespace: thanh-prd
 spec:
   project: default
-  sources:
+  source:
     - repoURL: registry-1.docker.io
       chart: dvanthanh1992/thanh-camera-app-chart
       targetRevision: 0.1.0
       helm:
-        valueFiles:
-          - $values/helm-values/values-prd.yml
+        passCredentials: false
+    #     valueFiles:
+    #       - $values/helm-values/values-prd.yml
 
-    - repoURL: "https://github.com/dvanthanh1992/test-dev"
-      targetRevision: prd
-      ref: values
+    # - repoURL: "https://github.com/dvanthanh1992/test-dev"
+    #   targetRevision: prd
+    #   ref: values
 
   destination:
     server: https://kubernetes.default.svc
