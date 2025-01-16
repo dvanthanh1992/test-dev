@@ -1,15 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
   name: camera-app-prd
   namespace: thanh-prd
 spec:
   project: default
   sources:
-    - repoURL: "registry-1.docker.io/dvanthanh1992"
-      path: thanh-camera-app-chart
-      targetRevision: 0.1.0
+    - repoURL: oci://registry-1.docker.io/dvanthanh1992
       chart: thanh-camera-app-chart
+      targetRevision: 0.1.0
       helm:
         valueFiles:
           - $values/helm-values/values-prd.yml
