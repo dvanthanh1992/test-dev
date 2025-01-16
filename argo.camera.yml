@@ -9,12 +9,11 @@ spec:
   sources:
     - chart: thanh-camera-app-chart
       repoURL: https://github.com/dvanthanh1992/helm-chart-repository
-      version: 0.1.0
-      sourceType: helm
+      targetRevision: 0.1.0
       helm:
         valueFiles:
           - $values/helm-values/values-prd.yml
-    - repoURL: https://github.com/dvanthanh1992/test-dev.git
+    - repoURL: https://github.com/dvanthanh1992/test-dev
       targetRevision: HEAD
       ref: values
   destination:
