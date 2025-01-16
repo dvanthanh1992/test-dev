@@ -6,9 +6,10 @@ metadata:
 spec:
   project: default
   sources:
-    - chart: thanh-camera-app-chart
-      repoURL: "registry-1.docker.io/dvanthanh1992"
+    - repoURL: "registry-1.docker.io/dvanthanh1992"
+      path: thanh-camera-app-chart
       targetRevision: 0.1.0
+      chart: thanh-camera-app-chart
       helm:
         valueFiles:
           - $values/helm-values/values-prd.yml
