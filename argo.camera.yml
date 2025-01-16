@@ -6,10 +6,17 @@ metadata:
   namespace: thanh-prd
 spec:
   project: default
-  source:
-    repoURL: https://raw.githubusercontent.com/dvanthanh1992/test-dev/prd/helm-charts/
-    chart: thanh-camera-infra
-    targetRevision: 0.1.0
+  sources:
+    - chart: thanh-camera-app-chart
+      repoURL: https://github.com/dvanthanh1992/helm-chart-repository
+      version: 0.1.0
+      sourceType: helm
+      helm:
+        valueFiles:
+          - $values/helm-values/values-prd.yml
+    - repoURL: https://github.com/dvanthanh1992/test-dev.git
+      targetRevision: HEAD
+      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: thanh-prd
