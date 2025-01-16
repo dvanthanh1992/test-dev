@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    - repoURL: registry-1.docker.io
-      chart: dvanthanh1992/thanh-camera-app-chart
+    - repoURL: registry-1.docker.io/dvanthanh1992
+      chart: thanh-camera-app-chart
       targetRevision: 0.1.0
       helm:
         passCredentials: false
