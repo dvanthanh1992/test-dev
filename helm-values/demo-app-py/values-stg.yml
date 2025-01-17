@@ -4,7 +4,7 @@ replicaCount: 1
 
 image:
   repository: dvanthanh1992/demo-app-py
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "8.0.0"
 
 env:

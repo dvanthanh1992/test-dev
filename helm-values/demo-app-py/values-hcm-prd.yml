@@ -6,7 +6,7 @@ env:
 
 image:
   repository: dvanthanh1992/demo-app-py
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "9.0.0"
 
 service:
