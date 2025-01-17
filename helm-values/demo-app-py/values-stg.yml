@@ -1,0 +1,5 @@
+---
+
+replicaCount: 1
+env:
+  STAGE_ENVIRONMENT: "STG-ENVIRONMENT"

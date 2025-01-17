@@ -1,0 +1,5 @@
+---
+
+replicaCount: 2
+env:
+  STAGE_ENVIRONMENT: "HNI-PRODUCTION"
