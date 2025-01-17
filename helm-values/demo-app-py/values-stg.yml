@@ -3,12 +3,3 @@
 replicaCount: 1
 env:
   STAGE_ENVIRONMENT: "STG-ENVIRONMENT"
-
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
