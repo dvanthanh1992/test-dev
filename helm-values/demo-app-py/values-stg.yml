@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: dvanthanh1992/demo-app-py
   pullPolicy: IfNotPresent
-  tag: "7.0.0"
+  tag: "8.0.0"
 
 env:
   STAGE_ENVIRONMENT: "STG-ENVIRONMENT"

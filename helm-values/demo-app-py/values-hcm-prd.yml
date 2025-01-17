@@ -7,7 +7,7 @@ env:
 image:
   repository: dvanthanh1992/demo-app-py
   pullPolicy: IfNotPresent
-  tag: "7.0.0"
+  tag: "9.0.0"
 
 service:
   type: LoadBalancer
