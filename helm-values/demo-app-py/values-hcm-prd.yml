@@ -3,3 +3,7 @@
 replicaCount: 2
 env:
   STAGE_ENVIRONMENT: "HCM-PRODUCTION"
+
+service:
+  type: LoadBalancer
+  port: 8888
