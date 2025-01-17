@@ -3,3 +3,8 @@
 replicaCount: 1
 env:
   STAGE_ENVIRONMENT: "DEV-ENVIRONMENT"
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8888
