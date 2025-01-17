@@ -3,3 +3,12 @@
 replicaCount: 2
 env:
   STAGE_ENVIRONMENT: "HNI-PRODUCTION"
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
