@@ -14,7 +14,7 @@ spec:
         valueFiles:
           - $values/helm-values/values-prd.yml
 
-    - repoURL: "https://github.com/dvanthanh1992/test-dev"
+    - repoURL: https://github.com/dvanthanh1992/test-dev
       targetRevision: prd
       ref: values
 
