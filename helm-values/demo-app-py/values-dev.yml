@@ -4,11 +4,16 @@ replicaCount: 1
 env:
   STAGE_ENVIRONMENT: "DEV-ENVIRONMENT"
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8888
+
+# livenessProbe:
+#   httpGet:
+#     path: /
+#     port: http
+# readinessProbe:
+#   httpGet:
+#     path: /
+#     port: http
