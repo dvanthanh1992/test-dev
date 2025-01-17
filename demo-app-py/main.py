@@ -15,7 +15,7 @@ def home():
     <head><title>Deployment Info</title></head>
     <body>
         <h1>Environment             : <b>{environment}</h1>
-        <h2>This is image version   : </b>7.0.0</h2>
+        <h2>This is image version   : </b>1.0.0</h2>
         <p><b>Pod Name              : </b>{hostname}</p>
         <p><b>Pod IP                : </b>{pod_ip}</p>
     </body>
