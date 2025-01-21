@@ -1,6 +1,6 @@
 ---
 
-replicaCount: 2
+replicaCount: 3
 env:
   STAGE_ENVIRONMENT: "HNI-PRODUCTION"
 
